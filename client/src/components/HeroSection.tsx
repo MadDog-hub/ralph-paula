@@ -19,8 +19,7 @@ const HeroSection = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundAttachment: 'scroll',
-        filter: 'brightness(0.7)'
+        backgroundAttachment: 'scroll'
       }}
     >
       {/* Subtle gradient overlay for text readability */}
