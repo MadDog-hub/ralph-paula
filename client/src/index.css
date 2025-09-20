@@ -1,0 +1,552 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Elegant Wedding Design System */
+
+@layer base {
+  :root {
+    /* Groom & Bride Green Theme - #013220 (Dark Green) & #77DD77 (Light Green) */
+    --background: 158 96% 10%; /* Main background - #013220 (Dark Green) */
+    --foreground: 0 0% 100%; /* Pure white text for contrast */
+
+    /* Card Colors */
+    --card: 158 96% 12%; /* Slightly lighter than background */
+    --card-foreground: 0 0% 100%; /* Pure white text on cards */
+
+    /* Popover Colors */
+    --popover: 158 96% 14%; /* Lighter popover background */
+    --popover-foreground: 0 0% 100%; /* Pure white text */
+
+    /* Brand Color */
+    --brand: 120 57% 67%; /* Light green brand color #77DD77 */
+    
+    /* Primary Colors */
+    --primary: 158 96% 15%; /* Medium dark green primary */
+    --primary-foreground: 0 0% 100%; /* Pure white text on primary */
+
+    /* Secondary Colors */
+    --secondary: 158 90% 20%; /* Medium green secondary */
+    --secondary-foreground: 0 0% 100%; /* Pure white text */
+
+    /* Muted Colors */
+    --muted: 158 80% 25%; /* Muted green */
+    --muted-foreground: 0 0% 100%; /* Pure white muted text */
+
+    /* Accent Colors */
+    --accent: 120 57% 67%; /* Light green accent #77DD77 */
+    --accent-foreground: 158 96% 10%; /* Dark text on light green */
+
+    /* Gold/Special Accent - now light green tone */
+    --gold: 120 57% 67%; /* Light green color #77DD77 */
+    --gold-foreground: 158 96% 10%; /* Dark green text on light green */
+
+    /* Green Palette - variations of green theme */
+    --dark-green: 158 96% 10%; /* #013220 */
+    --medium-dark-green: 158 90% 15%; /* Slightly lighter */
+    --medium-green: 158 80% 30%; /* Medium green */
+    --light-green: 120 57% 67%; /* #77DD77 */
+    --soft-green: 120 50% 75%; /* Softer light green */
+    --pale-green: 120 40% 85%; /* Pale green */
+    --mint-green: 140 45% 70%; /* Mint green variation */
+    --forest-green: 150 85% 20%; /* Forest green variation */
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 158 80% 25%; /* Green border */
+    --input: 158 90% 15%; /* Dark green input */
+    --ring: 120 57% 67%; /* Light green focus ring */
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Green Theme Gradients */
+    --gradient-elegant: linear-gradient(135deg, hsl(158, 96%, 10%), hsl(158, 90%, 15%));
+    --gradient-gold: linear-gradient(135deg, hsl(120, 57%, 67%), hsl(120, 50%, 75%));
+    --gradient-warm: linear-gradient(135deg, hsl(158, 96%, 12%), hsl(158, 85%, 20%));
+
+    /* Green Theme Shadows */
+    --shadow-elegant: 0 20px 50px -10px rgba(1, 50, 32, 0.4);
+    --shadow-soft: 0 10px 30px -5px rgba(1, 50, 32, 0.3);
+    --shadow-warm: 0 15px 40px -8px rgba(1, 50, 32, 0.25);
+
+    /* Elegant Typography Scale */
+    --font-display: 'Boska', 'Cormorant Garamond', serif; /* Headers - Boska 700 */
+    --font-script: 'Boska', 'Cormorant Garamond', serif; /* Sub-headers - Boska 500 */
+    --font-times: 'Times New Roman', Times, serif;
+    --font-body: 'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; /* Body text */
+
+    /* Smooth Transitions */
+    --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 158 96% 12%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 158 90% 20%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 120 57% 67%;
+    --sidebar-accent-foreground: 158 96% 10%;
+    --sidebar-border: 158 80% 25%;
+    --sidebar-ring: 120 57% 67%;
+  }
+
+  /* Custom Wedding Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes underlineGold {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes parallaxFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Responsive clip-path variables for story images */
+@media (min-width: 768px) {
+  :root {
+    --clip-path-1: url(#clipPath-1);
+    --clip-path-2: url(#clipPath-2);
+    --clip-path-3: url(#clipPath-3);
+    --clip-path-4: url(#clipPath-4);
+    --clip-path-5: url(#clipPath-5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    outline: none !important;
+  }
+
+  html {
+    @apply bg-background;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+
+
+
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+    font-weight: 500;
+  }
+
+  .font-times {
+    font-family: var(--font-times);
+  }
+
+  /* Mobile-First Responsive Typography */
+  .text-hero {
+    @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-light tracking-tight;
+    line-height: 0.9;
+    letter-spacing: 0.15em;
+  }
+
+  .text-hero-script {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-script font-normal italic;
+    line-height: 1.2;
+  }
+
+  .text-subtitle {
+    @apply text-lg sm:text-xl lg:text-2xl font-body font-light tracking-wider;
+    letter-spacing: 0.05em;
+  }
+
+  .text-section-title {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-display font-semibold tracking-tight;
+  }
+
+  .text-elegant-body {
+    @apply text-base sm:text-lg leading-relaxed font-body;
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-fade-scale {
+    animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-float {
+    animation: parallaxFloat 6s ease-in-out infinite;
+  }
+
+  /* Elegant Hover Effects */
+  .hover-elegant {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  .gold-underline {
+    @apply relative;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5;
+    background-color: hsl(var(--primary));
+    width: 0;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gold-underline.active::after {
+    width: 100%;
+  }
+
+  /* Clean Mobile Styles */
+  @media (max-width: 768px) {
+    * {
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+    }
+
+    img {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+      filter: none !important;
+    }
+
+    .shadow-elegant,
+    .shadow-soft,
+    .shadow-warm {
+      box-shadow: none !important;
+    }
+
+    /* Enhanced Mobile Layout Improvements */
+    section {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .max-w-4xl, .max-w-3xl, .max-w-2xl {
+      max-width: 100% !important;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Countdown section mobile improvements */
+    .grid-cols-4 {
+      gap: 0.5rem !important;
+    }
+
+    /* Card padding adjustments */
+    .p-8 {
+      padding: 1rem !important;
+    }
+
+    .p-6 {
+      padding: 0.75rem !important;
+    }
+
+    /* Image sizing for mobile */
+    .w-64 {
+      width: 12rem !important;
+    }
+
+    .h-64 {
+      height: 12rem !important;
+    }
+
+    /* Typography adjustments */
+    .text-4xl {
+      font-size: 2rem !important;
+    }
+
+    .text-5xl {
+      font-size: 2.5rem !important;
+    }
+
+    .text-6xl {
+      font-size: 3rem !important;
+    }
+
+    /* Hero section specific mobile fixes - moved to component */
+
+    /* Slideshow mobile fixes - exactly like video */
+    #slideshow img {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      object-position: top !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(1, 50, 32, 0.4);
+    @apply rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(1, 50, 32, 0.6);
+  }
+
+  /* Remove any glass/overlay effects and unwanted borders */
+  *::before,
+  *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Fix the red border issue */
+  section {
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* Force all text to be white */
+  * {
+    color: white !important;
+  }
+  
+  /* Specific overrides for common text elements */
+  h1, h2, h3, h4, h5, h6, p, span, div, a, li, td, th, label, input::placeholder {
+    color: white !important;
+  }
+  
+  /* Override any remaining color classes */
+  .text-muted-foreground,
+  .text-gray-600,
+  .text-gray-500,
+  .text-slate-600,
+  .text-neutral-600 {
+    color: white !important;
+  }
+
+  /* Restore proper border-radius for UI elements that need it */
+  .rounded-lg {
+    border-radius: 0.5rem !important;
+  }
+
+  .rounded-xl {
+    border-radius: 0.75rem !important;
+  }
+
+  .rounded-2xl {
+    border-radius: 1rem !important;
+  }
+
+  /* Accessible focus styles for blue theme */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* From Uiverse.io by mrhyddenn - Updated for #180806 theme */
+  .shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: hsl(var(--foreground));
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    background: hsl(var(--gold));
+    box-shadow: 0 0 25px hsl(var(--gold));
+  }
+
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px hsl(var(--gold)),
+                0 0 25px hsl(var(--gold)),
+                0 0 50px hsl(var(--gold)),
+                0 0 100px hsl(var(--gold));
+  }
+
+  /* Image Loop Animation Styles */
+  .image-loop-section {
+    position: relative;
+  }
+
+  .image-loop-container {
+    width: 100%;
+    overflow: hidden;
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  .image-loop-track {
+    display: flex;
+    animation: imageLoop 60s linear infinite;
+    width: fit-content;
+  }
+
+  .image-loop-track-static {
+    display: flex;
+    width: fit-content;
+  }
+
+  .image-loop-item {
+    flex-shrink: 0;
+    margin-right: 2rem;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(1, 50, 32, 0.5);
+  }
+
+  .image-loop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  .image-loop-item:hover .image-loop-img {
+    transform: scale(1.05);
+  }
+
+  @keyframes imageLoop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pause animation on hover for better UX */
+  .image-loop-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Alternating Section Backgrounds */
+  .section-pastel-blue {
+    @apply bg-background text-foreground;
+  }
+
+  .section-hard-blue {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 768px) {
+    .image-loop-item {
+      width: 250px;
+      height: 167px;
+      margin-right: 1rem;
+    }
+
+    .image-loop-track {
+      animation-duration: 45s;
+    }
+  }
+}
+
+/* UIverse Location Guide Button - Updated for #180806 theme */
+.location-guide-btn {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge hsl(var(--gold));
+  outline: none;
+  background-color: transparent;
+  color: hsl(var(--foreground));
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-guide-btn::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: hsl(var(--primary));
+  transition: 0.5s;
+  transform-origin: center;
+  z-index: -1;
+}
+
+.location-guide-btn::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: hsl(var(--primary));
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.location-guide-btn:hover::before, 
+.location-guide-btn:hover::after {
+  transform: scale(0);
+}
+
+.location-guide-btn:hover {
+  box-shadow: inset 0px 0px 25px hsl(var(--gold));
+}
