@@ -1,6 +1,6 @@
 import { TypeAnimation } from 'react-type-animation';
 import { useState } from 'react';
-import heroBackgroundImage from '@assets/new-hero-background_1758350032251.png';
+import heroBackgroundImage from '@assets/new-hero-background.jpg';
 import { useAnimationContext } from '@/contexts/AnimationContext';
 import BotanicalLayer from '@/components/BotanicalLayer';
 import botanicalLeaf from '@assets/1_1758357477982.png';
