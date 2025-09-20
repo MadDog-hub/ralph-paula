@@ -142,7 +142,7 @@ const RSVPSection = () => {
               data-testid="button-rsvp"
             >
               <a 
-                href="https://ejkrizzarsvp.replit.app" 
+                href="https://ralphpaularsvp.replit.app" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative inline-flex items-center justify-center w-full h-full z-10"
