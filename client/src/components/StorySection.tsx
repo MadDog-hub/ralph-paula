@@ -7,7 +7,7 @@ import { Star, Compass, Globe, Heart } from 'lucide-react';
 import firstImage from '@assets/OURStory1ST-IMAGE_1758344796892.png';
 import proposalImage from '@assets/OurStory2ND-IMAGE_1758344796891.jpg';
 import midImage from '@assets/OurStory3RD-IMAGE_1758344796893.jpg';
-import loopImage from '@assets/OurStory4TH-IMAGE_1758344796892.png';
+import loopImage from '@assets/ourstory-new.jpg';
 import newDistanceImage from '@assets/ourStorys_1758352683598.jpg';
 import botanicalLeaf from '@assets/1_1758357477982.png';
 import pinkFlowers from '@assets/7_1758357477985.png';
